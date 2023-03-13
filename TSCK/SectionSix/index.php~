@@ -1,0 +1,221 @@
+<?php
+include('header.php');
+$id_number=$_SESSION['id_number'];
+
+
+//Insert New Record
+   if(isset($_POST['btnIinsertNew']))
+   {
+	$varToday=date("l jS \of F Y h:i:s A"); 
+	$datefrom=$_POST['date_from'];
+	$dateto=$_POST['date_to'];
+	$university=strtoupper($_POST['university']);
+	$course_name=strtoupper($_POST['course_name']);
+	$details_and_duration=strtoupper($_POST['details_and_duration']);
+
+	$sql = "INSERT INTO relevant_courses (id_number, date_from, date_to, university, course_name, details_and_duration)
+	 VALUES ('$id_number','$datefrom','$dateto','$university','$course_name','$details_and_duration')";
+	$conn->query($sql);
+	header("location: secSix.php");
+	
+   }
+   
+   // user is editing stuff:
+   elseif(isset($_POST['btnEdit']))
+   {
+   	include('edit.php');
+	//die();
+	
+   }
+   
+//Edit Save
+   
+elseif(isset($_POST['btnEditSave']))
+{
+	$rc_id=$_POST['rc_id'];
+	$date_from=$_POST['date_from'];
+	$date_to=$_POST['date_to'];
+	$year=$_POST['year'];
+	$university=$_POST['university'];
+	$course_name=$_POST['course_name'];
+	$details_and_duration=$_POST['details_and_duration'];
+
+$N = count($rc_id);
+for($i=0; $i < $N; $i++)
+{
+	
+	$result = mysqli_query($dbconnection, "UPDATE relevant_courses SET date_from='$date_from[$i]',date_to='$date_to[$i]', university='$university[$i]', course_name='$course_name[$i]' ,details_and_duration='$details_and_duration[$i]' where rc_id='$rc_id[$i]'")or die(mysql_error());
+}
+header("location: secSix.php");
+}
+   
+    
+   // user is deleting stuff:
+elseif(isset($_POST['btnDelete']))
+   {
+ $rc_id=$_POST['rc_id'];
+
+$N =count($rc_id);
+for($i=0; $i < $N; $i++)
+{
+	$sql="DELETE FROM `relevant_courses` where rc_id='".$rc_id[$i]."'";
+	$result=$dbconnection->query($sql);
+	if(!$result)
+	{
+	echo mysqli_error($dbconnection);	
+	}
+}
+header("location: secSix.php");
+
+   }
+   // user is doing nothing, it's his/her first time (ooer)
+   else
+   {
+
+?>
+<head>
+<script>
+function DateCheck()
+{
+  var StartDate= document.getElementById('txtStartDate').value;
+  var EndDate= document.getElementById('txtEndDate').value;
+  var eDate = new Date(EndDate);
+  var sDate = new Date(StartDate);
+  if(StartDate!= '' && StartDate!= '' && sDate> eDate)
+    {
+    alert("Please ensure that the year to Date is greater than the Start year Date!!!!!!.");
+    
+	document.getElementById("txtEndDate").value = "";
+	document.getElementById("txtStartDate").value = "";
+  setTimeout(function(){document.getElementById("txtEndDate").innerHTML="";},4000*1);
+    }
+}	
+function TDate() {
+    var UserDate = document.getElementById("txtEndDate").value;
+    var ToDate = new Date();
+
+    if (new Date(UserDate).getTime() >= ToDate.getTime())
+		{
+          alert("The year to must be less than todays date!!!!!!!!");
+       document.getElementById("txtEndDate").value = "";
+     }
+}
+ 
+ 
+
+
+ function validateForm()
+ {
+        if ($('input[id=r1]:checked').length <= 0) {
+            alert("No entry is selected");
+            return false;
+        }
+       
+    }
+</script>
+</head>
+
+<body style="margin-top: -25px;">
+<h3> 6. Relevant Courses and Training attended Lasting not Less than Two (2) Weeks. </h3>
+<div class="container" style="width:100%; margin-left:-5px;">
+<form name="frmAcademic6" action="" method="post" onsubmit="return validateForm()">
+	<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example" >
+		<thead style="background-color: #314C95;color:#FFFFFF;">
+			<tr>
+				<th style="text-align:center; font-size:12px; ">From Year</th>
+				<th style="text-align:center; font-size:12px; ">To Year</th>
+				<th style="text-align:center;  font-size:12px; ">University/College/Institution</th>
+				<th style="text-align:center;  font-size:12px; ">Name of Course</th>
+				<th style="text-align:center;  font-size:12px; ">Description</th>
+				<th style="text-align:center;  font-size:12px;">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+		<?php
+		//$varTableName = 'testmember';
+		$query=mysqli_query($dbconnection, "select * from relevant_courses WHERE id_number='".$id_number."'")or die(mysqli_error());
+		while($row=mysqli_fetch_array($query)){
+		$rc_id=$row['rc_id'];
+		?>
+			<tr>
+				<td style="text-align:center;  font-size:12px;"><?php echo $row['date_from'] ?></td>
+				<td style="text-align:center;  font-size:12px;"><?php echo $row['date_to'] ?></td>
+				<td style="text-align:center;  font-size:12px;"><?php echo $row['university'] ?></td>
+				<td style="text-align:center;  font-size:12px;"><?php echo $row['course_name'] ?></td>
+				<td style="text-align:center;  font-size:12px;"><?php echo $row['details_and_duration'] ?></td>
+				
+				<td style="text-align:center;  font-size:12px;">
+					<input name="selector[]" id="r1" type="radio" value="<?php echo $rc_id; ?>">
+				</td>
+			</tr>
+		<?php  } ?>
+		</tbody>
+	</table>
+	<br />
+	<button name="btnEdit" class="btn btn-success pull-right" style="background: #314C95;" name="submit_mult" type="submit">
+		Update 
+	</button>
+</form>
+
+<br>
+<br>
+
+<form class="form-vertical" action="" method="post" >
+
+<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+		<thead style="background-color: #314C95;color:#FFFFFF;">
+			<tr>
+				<th style="text-align:center; font-size:12px; ">From Year</th>
+				<th style="text-align:center; font-size:12px; ">To Year</th>
+				<th style="text-align:center;  font-size:12px; ">University/College/Institution</th>
+				<th style="text-align:center;  font-size:12px;">Name of Course</th>
+				<th style="text-align:center;  font-size:12px; ">Description</th>
+				
+				
+			</tr>
+		</thead>	
+		<tbody>
+		  <tr align="center">
+			<td><span class="controls">
+			  <input name="date_from" id="txtStartDate"  type="date" required="required" value="<?php echo $row['date_from'] ?>" />
+			</span></td>
+			<td><span class="controls">
+			  <input name="date_to" id="txtEndDate"  onchange="TDate()" type="date" required="required" value="<?php echo $row['date_to'] ?>" />
+			</span></td>
+			
+			<td><span class="controls">
+			  <input name="university"  required="required" type="text" value="<?php echo $row['university'] ?>" />
+			</span></td>
+			<td><span class="controls">
+			  <input name="course_name"  required="required" type="text" style=" font-weight:bold;" value="<?php echo $row['course'] ?>" />
+			</span></td>
+			<td><span class="controls">
+			  <input name="details_and_duration" required="required" type="text" style=" font-weight:bold;" value="<?php echo $row['details_and_duration'] ?>" />
+			</span></td>
+						
+		  </tr>
+	  </tbody>
+</table>
+	</div>
+	<div class="row">
+	<div class="form-group col-md-4">
+	   <a href="./secFive.php" role="button" class="btn btn-success pull-left" style="margin-left:1%;background: #314C95;"><< Previous</a>
+	   </div>
+	<div class="form-group col-md-4">
+   <input name="btnIinsertNew" class="btn btn-success pull-right"  style="padding:20px;" type="submit" value="Save" onmouseover="DateCheck()" >
+	</div>
+	<div class="form-group col-md-4">
+	   <a href="./secSeven.php" role="button" class="btn btn-success " style="margin-left:77%; background: #314C95;">Next >></a>
+	   </div>
+
+</div>
+	
+
+</form>
+
+
+
+</body>
+</html>
+<?php
+   }?>

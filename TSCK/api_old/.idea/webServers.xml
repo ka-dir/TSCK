@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="172060a2-5e2d-4577-8c8f-1a12da580a6a" name="TOS" url="http://197.156.132.46">
+        <fileTransfer host="197.156.132.46" port="22" rootFolder="/var/www/html" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="5cd838b9-ccc7-4988-a768-9554a27da56f" name="Services" url="http://163.67.3.100">
+        <fileTransfer host="163.67.3.100" port="22" rootFolder="/var/www/html/TSCKTEST" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

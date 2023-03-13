@@ -1,0 +1,693 @@
+<?php
+include('../TSCK/includes/dbConfig.php');
+//session_start();
+error_reporting (E_ALL ^ E_NOTICE);
+$VarVacancy_id=$_SESSION['vacancy_id'];
+$VarAdvert_no=$_SESSION['Advert_no'];
+$VarTscNo=$_SESSION['TscNo'];
+$VarID_No=$_SESSION['id_number'];
+$VarPage="2-Personal Details";
+
+
+if($VarTscNo>0)
+{
+	
+	
+	$sql="SELECT DISTINCT * FROM `staffreg` WHERE `Payroll-Num`='".$VarTscNo."'";
+	$result=$conn->query($sql);
+	while($row = mysqli_fetch_array($result))
+	{
+		$varTSCNo=intval($row['Payroll-Num']);
+		$varTitle=$row['Salutation'];
+		$varSurname=$row['Surname'];
+		$varFirstName=$row['First-Name'];
+		$varOtherNames=$row['Other-Names'];
+		$varBirthdate=$row['Birth-Date'];
+		$varIdNumber=$row['ID-Number'];
+		$varGender=$row['Gender'];
+		$varTaxPin=$row['Tax-PIN'];
+		$varHomecounty=$row['County-Name'];
+		$varPayrollNum=$row['Payroll-Num'];
+		$varStationName=$row['Station-Name'];
+		$varDesigName=$row['Desig-Name'];
+		$varJobDesig=$row['Job-Desig'];
+		$varDate=date('d-M-Y',strtotime($row['Birth-Date']));
+		$varDateOfPost=date('d-M-Y',strtotime($row['Date-of-Post']));
+		
+	}
+}
+
+
+if(isset($_POST['btnSubmitProfile']))
+{
+		if($VarTscNo>0){
+		$DOB=$varBirthdate;	
+		}else{
+		$DOB=$_POST['DOB'];
+		}	
+	//
+	
+		if($VarTscNo>0){
+		$varTSCNoI=$varTSCNo;	
+		}else{
+		$varTSCNoI=0;
+		}
+		
+	
+	
+	
+	
+	//NOTES
+	//-addslashifneeded
+	$surname=strtoupper($_POST['surname']);
+	$firstname=strtoupper($_POST['firstname']);
+	$othername=strtoupper($_POST['othername']);
+	$title=strtoupper($_POST['title']);
+	$idNo=$_POST['idNo'];
+	$pinNo=strtoupper($_POST['pinNo']);
+	$gender=strtoupper($_POST['gender']);
+	$nationality=strtoupper($_POST['nationality']);	
+	$county=strtoupper($_POST['county']);
+	$subcounty=strtoupper($_POST['subcounty']);
+	$Constituency=strtoupper($_POST['Constituency']);
+	$postalAddress=strtoupper($_POST['postalAddress']);
+	$postalCode=$_POST['postalCode'];
+	$town_city=strtoupper($_POST['town_city']);	
+	$mobile_no=$_POST['mobile_no'];
+	$email=$_POST['email'];	
+	$contactPersonName=strtoupper($_POST['contactPersonName']);
+	$contactPersonNo=$_POST['contactPersonNo'];	
+	$disability=$_POST['yesno'];
+	$detailOfDisability=$_POST['detailOfDisability'];
+	$RegistrationDisabilityNo=$_POST['RegistrationDisabilityNo'];
+	$dateOfDisabilityRegistration=date('Y-m-d',strtotime($_POST['dateOfDisabilityRegistration']));
+	$currentEmployer=strtoupper($_POST['currentEmployer']);
+	$positionHeld=strtoupper($_POST['positionHeld']);
+	//$EffectiveDate=$_POST['EffectiveDate'];
+	$EffectiveDate=date('Y-m-d',strtotime($_POST['EffectiveDate']));
+	$GrossSalary=$_POST['GrossSalary'];
+	$vid=$_SESSION['vacancy_id'];
+	
+
+	//Insert
+	$sql="INSERT INTO applicant_details( 	
+		S_name,F_name,O_name,title,DOB,id_no,tscNo,KRA_pin,gender,nationality,county,sub_county,constituency,postal_address,postal_code,town,
+		mobile_no,email,alt_person_name,alt_tel_no,disability,disability_description,disability_no,disability_reg_date,current_employer_name,
+		position_held,effective_date,gross_salary)
+
+
+		VALUES(	
+		'$surname',
+		'$firstname',
+		'$othername',
+		'$title',
+		'$DOB',
+		'$idNo',
+		'$varTSCNoI',
+		'$pinNo',
+		'$gender',
+		'$nationality',
+		'$county',
+		'$subcounty',
+		'$Constituency',
+		'$postalAddress',
+		'$postalCode',
+		'$town_city',
+		'$mobile_no',
+		'$email',
+		'$contactPersonName',
+		'$contactPersonNo',
+		'$disability',
+		'$detailOfDisability',
+		'$RegistrationDisabilityNo',
+		'$dateOfDisabilityRegistration',
+		'$currentEmployer',
+		'$positionHeld',
+		'$EffectiveDate',
+		'$GrossSalary')
+		";
+	
+//	$results = mysqli_query($conn,$sql) or trigger_error("Query Failed! SQL: $sql - Error: ".mysqli_error(), E_USER_ERROR);
+	if(mysqli_query($conn, $sql))
+	{
+		echo "Records inserted successfully.";
+		header("location: secThree.php");
+	} else
+	{
+		echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+		//trigger_error("Query Failed! SQL: $sql - Error: ".mysqli_error(), E_USER_ERROR);
+	}
+
+	//$sql="INSERT INTO tbl_logs SET 
+	//id_number='".$idNo."',vacancy_id='".$VarVacancy_id."',advert_number='".$VarAdvert_no."',Page='".$VarPage."'";
+	//$results = mysqli_query($conn,$sql) or trigger_error("Query Failed! SQL: $sql - Error: ".mysqli_error(), E_USER_ERROR); -->
+}
+
+?>
+
+<html>
+<head>
+<title>
+</title>
+
+<script type="text/javascript" >
+function yesnoCheck()
+ {
+    if (document.getElementById('yesCheck').checked)
+		{
+        document.getElementById('ifYes').style.visibility = 'visible';
+		} 
+	else 
+		{
+        document.getElementById('ifYes').style.visibility = 'hidden';
+		}
+ }
+
+</script>
+<script type="text/javascript"> /* script for only allowing alphabets  */
+   		   
+    function ValidateAlpha(evt)
+    {
+        var keyCode = (evt.which) ? evt.which : evt.keyCode
+        if ((keyCode < 65 || keyCode > 90) && (keyCode < 97 || keyCode > 123) && keyCode != 32)
+         
+        return false;
+            return true;
+    }
+
+</script>
+<link href="../css/style.css" rel="stylesheet">
+
+</head>
+<body style="margin-top: -25px;">
+<h3>2. Personal Details </h3>
+
+<?php //include('errors.php'); ?>
+
+<form  method="post" action="">
+<div class="row">
+
+<div class="form-group col-md-2">
+		<label for="country">Title</label><br>
+		
+<?php if($VarTscNo>0){
+//echo $varTitle; 
+echo "<input name=\"title\" type=\"text\" readonly = \"\" value = \"$varTitle";
+echo "\">";
+}else{
+?>	
+		
+     <select id="country" name="title">
+      <option value="Mr">Mr</option>
+      <option value="Mrs">Mrs</option>
+      <option value="Miss">Miss</option>
+	  <option value="Prof">Prof</option>
+      <option value="Dr">Dr</option>
+      <option value="Rev">Rev</option>
+	  <option value="Other">Other</option>
+    </select>
+	
+<?php
+}?>
+		
+</div>
+  
+
+<div class="form-group col-md-2">
+<label for="inputCity">Surname</label>
+<?php
+	if($VarTscNo>0){
+	echo "<input name=\"surname\" type=\"text\" readonly = \"\" value = \"$varSurname";
+	echo "\">";
+	}else{
+	?>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<input type="text" class="ValidateAlphaAndSpecialKeys" name="surname" placeholder="Surname" required="required">	
+<?php }?>
+<script type="text/javascript">
+    $('.ValidateAlphaAndSpecialKeys').on('input', function() {
+  var node = $(this);
+
+  node.val(node.val().replace(/[^a-z\s'-]/gi, ''));
+});
+</script>
+</div>
+
+
+
+<div class="form-group col-md-2">
+<label for="inputCity">First Name</label>
+<?php
+	if($VarTscNo>0){
+	echo "<input name=\"firstname\" type=\"text\" readonly = \"\" value = \"$varFirstName";
+	echo "\">";
+	}else{
+	?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<input type="text" class="ValidateAlphaAndSpecialKeys" name="firstname" placeholder="First Name" required="required">	
+<?php }?>
+<script type="text/javascript">
+    $('.ValidateAlphaAndSpecialKeys').on('input', function() {
+  var node = $(this);
+
+  node.val(node.val().replace(/[^a-z\s'-]/gi, ''));
+});
+</script>
+</div>
+	
+
+<div class="form-group col-md-2">
+<label for="inputCity">Other Names</label>
+<?php
+	if($VarTscNo>0){
+	echo "<input name=\"othername\" type=\"text\" readonly = \"\" value = \"$varOtherNames";
+	echo "\">";
+	}else{
+	?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<input type="text" class="ValidateAlphaAndSpecialKeys" name="othername" placeholder="Other Names" >	
+<?php }?>
+<script type="text/javascript">
+    $('.ValidateAlphaAndSpecialKeys').on('input', function() {
+  var node = $(this);
+
+  node.val(node.val().replace(/[^a-z\s'-]/gi, ''));
+});
+</script>
+</div>
+	
+</div>
+ <div class="row">
+  	 <div class="form-group col-md-2">
+      <label for="inputCity">Date of Birth</label><br>
+	  
+	  
+<?php 
+if($VarTscNo>0)
+{
+echo "<input name=\"DOB\" type=\"text\" readonly = \"\" value = \"$varDate";
+echo "\">";
+
+//echo "<input size = \"8\" name=\"DOB\" type=\"text\" readonly = \"\" style=\"background-color:#FF99FF\" value = \"$varDate";
+//echo "\">";
+	
+}
+else
+{	
+?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+	    $(function(){
+        var dtToday = new Date();   
+        var month = dtToday.getMonth() + 1;// jan=0; feb=1 .......
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear() - 18;
+        if(month < 10)
+            month = '0' + month.toString();
+        if(day < 10)
+            day = '0' + day.toString();
+    	var minDate = year + '-' + month + '-' + day;
+        var maxDate = year + '-' + month + '-' + day;
+    	$('#DOB').attr('max', maxDate);
+    });
+</script>
+	  
+      <input type="date" align="left" name="DOB" data-form-field="DOB" required="required" id="DOB" placeholder="dd-mm-yyyy"
+	  value="">
+	  <?php } ?>
+    </div>
+
+     <div class="form-group col-md-2">
+      <label for="inputCity">ID Number</label>
+      <input  type="text"  name="idNo" maxlength="8" required="required" readonly
+	  value="<?php 
+
+	  echo $VarID_No; 
+	  
+	  ?>" >
+    </div>
+	
+	
+
+	
+	
+	
+<div class="form-group col-md-2">
+<label for="inputCity">Gender</label><br>		
+<?php if($VarTscNo>0){
+if($varGender=="M"){
+
+
+	echo "<input name=\"gender\" type=\"text\" readonly = \"\" value = \"$varGender";
+	echo "\">";
+
+}
+ 
+}else{
+?>	
+		
+     <select id="country" name="gender">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+	
+<?php
+}?>		
+</div>
+	 
+	<script type="text/javascript">
+    function blockSpecialChar(e){
+        var k;
+        document.all ? k = e.keyCode : k = e.which;
+        return ((k > 64 && k < 91) || (k > 96 && k < 123) || k == 8 || k == 32 || (k >= 48 && k <= 57));
+        }
+    </script>
+
+	
+     <div class="form-group col-md-2">
+      <label for="inputCity">KRA Pin</label>
+      <input type="text" onkeypress="return blockSpecialChar(event)" name="pinNo" maxlength="11" placeholder="" required="required"
+	   value="<?php 
+	  if($VarTscNo>0)
+	  {
+	  echo $varTaxPin; }?>" >
+    </div>
+  </div>
+ 
+    <div class="row">
+  	 <div class="form-group col-md-2">
+      <label for="inputCity">Postal Address</label>
+      <input type="text" name="postalAddress"required="required" placeholder="e.g. 75929">
+    </div>
+     <div class="form-group col-md-2">
+      <label for="inputCity"> Postal Code</label>
+      <input type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==5) return false;" name="postalCode"required="required" placeholder="e.g. 00200">
+    </div>
+     <div class="form-group col-md-2">
+      <label for="inputCity">Town/City</label>
+      <input type="text" onKeyPress="return ValidateAlpha(event);" name="town_city"required="required" placeholder="e.g. Nairobi">
+    </div>
+
+  </div>
+   <div class="row">
+  	 <div class="form-group col-md-2">
+      <label for="inputCity">Nationality</label>
+     <!--  <input type="text" name="nationality" required="required" placeholder="Nationality" > -->
+      <select name="nationality">
+	  	<option>Kenyan</option>
+<?php 
+$sql = mysqli_query($conn, "SELECT * FROM countries");
+while ($row = $sql->fetch_assoc()){
+echo "<option value=".$row['nationality'].">" . $row['nationality'] . "</option>";
+}
+?>
+</select>
+    </div>
+    
+	
+	
+	
+
+	
+<div class="form-group col-md-2">
+<label for="inputCity">Home County</label><br>		
+<?php if($VarTscNo>0){
+//echo $varHomecounty;
+
+	echo "<input name=\"county\" type=\"text\" readonly = \"\" value = \"$varHomecounty";
+	echo "\">";
+
+}else{
+?>	
+		
+<select id="country" name="county" required="required">
+<option value="">Select County</option>
+<option value="Baringo">Baringo</option>
+<option value="Bomet">Bomet</option>
+<option value="Bungoma">Bungoma</option>      
+<option value="Busia">Busia</option>
+<option value="Elgeyo Marakwet">Elgeyo Marakwet</option>
+<option value="Embu">Embu</option>
+<option value="Garissa">Garissa</option>
+<option value="Homa Bay">Homa Bay</option>
+<option value="Kajiado">Kajiado</option>
+<option value="Kakamega">Kakamega</option>
+<option value="Kericho">Kericho</option>
+<option value="Kiambu">Kiambu</option>
+<option value="Kilifi">Kilifi</option>
+<option value="Kirinyaga">Kirinyaga</option>
+<option value="Kisii">Kisii</option>
+<option value="Kisumu">Kisumu</option>
+<option value="Kitui">Kitui</option>
+<option value="Kwale">Kwale</option>
+<option value="Laikipia">Laikipia</option>
+<option value="Lamu">Lamu</option>
+<option value="Machakos">Machakos</option>
+<option value="Makueni">Makueni</option>
+<option value="Mandera">Mandera</option>
+<option value="Meru">Meru</option>
+<option value="Migori">Migori</option>
+<option value="Marsabit">Marsabit</option>
+<option value="Mombasa">Mombasa</option>
+<option value="Muranga">Muranga</option>
+<option value="Nairobi">Nairobi</option>
+<option value="Nakuru">Nakuru</option>
+<option value="Nandi">Nandi</option>
+<option value="Narok">Narok</option>
+<option value="Nyamira">Nyamira</option>
+<option value="Nyandarua">Nyandarua</option>
+<option value="Nyeri">Nyeri</option>
+<option value="Samburu">Samburu</option> 
+<option value="Taita Taveta">Taita Taveta</option>
+<option value="Tana River">Tana River</option>
+<option value="Tharaka Nithi">Tharaka Nithi</option>
+<option value="Trans Nzoia">Trans Nzoia</option>
+<option value="Turkana">Turkana</option>
+<option value="Uasin Gishu">Uasin Gishu</option>
+<option value="Vihiga">Vihiga</option>
+<option value="Wajir">Wajir</option>
+<option value="West Pokot">West Pokot</option>
+    </select>
+	
+<?php
+}
+?>		
+</div>
+	
+  </div>
+  
+  <div class="row">
+
+    <div class="form-group col-md-2">
+      <label for="inputCity">Alternative Contact Person</label>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <input type="text" class="ValidateAlphaAndSpecialKeys" name="contactPersonName"required="required" placeholder="e.g. John Doe">
+      <script type="text/javascript">
+    $('.ValidateAlphaAndSpecialKeys').on('input', function() {
+  var node = $(this);
+
+  node.val(node.val().replace(/[^a-z\s'-]/gi, ''));
+});
+</script>
+    </div>
+     	 <div class="form-group col-md-2">
+      <label for="inputCity">Telephone No</label>
+      <input type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" name="contactPersonNo"required="required" placeholder="e.g. 0722123456">
+    </div>
+	  	 <div class="form-group col-md-2">
+      <label for="inputCity">E-mail address</label>
+      <input type="email" name="email"required="required" placeholder="e.g abc@tsc.go.ke">
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  <?php
+  if($VarTscNo>0)
+  
+  {
+  ?>
+  
+   <div class="row">
+   
+	<div class="form-row">
+
+	
+	<div class="form-group col-md-2">
+      <label for="inputPassword4">TSC No</label>
+      <input type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" name="TSCNo"id="TSCNo" placeholder="" readonly
+	   value="<?php 
+	  if($VarTscNo>0)
+	  {
+	  echo $varPayrollNum;}?>">
+    </div>
+	
+	  	   <div class="form-group col-md-2">
+      <label for="inputPassword4">Present Submitive Post</label>
+      <input type="text" onKeyPress="return ValidateAlpha(event);" name="PresentSubmitivePost" placeholder="" readonly 
+	  value="<?php 
+	  if($VarTscNo>0)
+	  {
+	  echo $varDesigName;}?>">
+    </div>
+	
+	
+    <div class="form-group col-md-2">
+      <label for="inputEmail4">Station</label>
+      <input type="text" onKeyPress="return ValidateAlpha(event);"  name="station" placeholder="" readonly
+	  value="<?php 
+	    
+	  if($VarTscNo>0)
+	  {
+	  echo $varStationName;}?>">
+    </div>
+
+	</div>
+	</div>
+	
+	  <div class="row">
+
+	
+  	<div class="form-group col-md-2">
+      <label for="inputPassword4">Job group/Scale/Grade</label>
+      <input type="text"  name="jobGroup" placeholder="" readonly
+	  value="<?php 
+	  if($VarTscNo>0)
+	  {
+	  echo $varJobDesig;}?>">
+    </div>
+	
+	
+	  	<div class="form-group col-md-2">
+      <label>Date Of Current Apointment</label>
+      <input type="text" onKeyPress="return ValidateAlpha(event);" name="DateOfCurrentApointment" placeholder="" readonly
+	  value="<?php 
+	  if($VarTscNo>0)
+	  {
+	  echo $varDateOfPost;}?>">
+    </div>
+	
+  </div>
+
+ <?php
+  }
+  else
+  {
+?>  
+  
+  <div class="row">
+  	 
+<div class="form-row">
+<div class="form-group col-md-2">
+
+ <label for="inputPassword4">Current employer(where applicable)</label>
+
+<input type="text" onKeyPress="return ValidateAlpha(event);" name="currentEmployer" placeholder="" >
+</div>
+<div class="form-group col-md-2">
+<label><strong>Position held:</strong></label>
+<input type="text" onKeyPress="return ValidateAlpha(event);" name="positionHeld"  placeholder="">
+</tr>
+</div>
+<div class="form-group col-md-2">
+<label><strong>Effective date:</strong></label>
+<input type="date" name="EffectiveDate" placeholder="dd-mm-yyyy">
+</div>
+<div class="form-group col-md-2">
+<label><strong>Gross Salary(monthly)Ksh:</strong></label>
+<!--  <input type="text" name="GrossSalary" placeholder="" > -->
+<select id="country" name="GrossSalary">
+      <option value="0-49,000">0-49,0000</option>
+	  <option value="50000-99000">50,000-99,000</option>
+      <option value="100000-149000">100,000-149,000</option>
+	  <option value="150000-199000">150,000-199,000</option>
+      <option value="200000-249000">200,000-249,000</option>
+      <option value="250000-299000">250,000-299,000</option>
+	  <option value="300000-349000">300,000-349,000</option>
+	  <option value="350000-399000">350,000-399,000</option>
+	  <option value="400000-449000">400,000-449,000</option>
+	  <option value="450000-499000">450,000-499,000</option>
+	  <option value="above500000">Above 500,000</option>
+    </select>
+</div>
+
+
+</div>
+
+  </div>
+  
+  <?php
+  }
+  ?>
+
+   <div  class="row">
+  	 <div class="form-group col-md-2">
+      <label for="inputCity">Are you living with a Disability</label><br>
+		<input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck" required="required" value="YES"/>Yes
+		<input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck" required="required" value="NO"/>No
+    </div>
+  </div>
+     	 
+   <div id="ifYes" style="visibility:hidden" class="row">
+  	 <div class="form-group col-md-2">
+      <label for="inputCity">i) Nature of disability</label>
+      <input type="text" onKeyPress="return ValidateAlpha(event);" id='yes' name="detailOfDisability" default="None">
+      
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputCity">ii) Details of Registration with the National council for people with disabilities</label>
+      <div class="row">
+       <div class="form-group col-md-6">
+      <label>Registration No</label>
+    <input type="text" id='yes'name="RegistrationDisabilityNo">
+		</div>
+
+      </div>
+	  
+	  
+	  
+  </div>
+  <div class="form-group col-md-2">
+	<label>Registration Date</label>
+	<input type="date" align="left" name="dateOfDisabilityRegistration" data-form-field="dateOfDisabilityRegistration" id="dateOfDisabilityRegistration" placeholder="dd-mm-yyyy">
+</div> 
+  
+  
+  </div>
+
+  
+	
+	<div class="row">
+	<div class="form-group col-md-4">
+     	
+
+
+
+<a href="./secOne.php" role="button" style="background-color:#314C95;" class="btn btn-success pull-left" style="margin-left:2%;"><< Previous</a>
+</div>
+<div class="form-group col-md-4">
+     	 <input type="submit" style="margin-left:10%;"name="btnSubmitProfile" value="Save"> 
+</div>	
+<div class="form-group col-md-4">	 
+     	 <input   type="submit" style="margin-right:7%;width:80px;height=2%;"name="btnSubmitProfile" value="Next >>" class="btn btn-success pull-right">
+		 </div>
+		<!-- <input type="submit" style="margin-left:10%;"name="btnSubmitProfile" value="Next >>" onclick="window.location.href='secThree.php'"-->
+ </div>  
+
+
+</form>
+
+</body>
+</html>
+
+
+<?php
+
+
+
+?>
+
+

@@ -1,0 +1,215 @@
+Paygroup,Desigcode,Jobfamily,Jobscheme,Subcadre,Jobgroup,Extracode,Designame,Abbreviate,Commoncode,Jobvalue,Adstatus,Votecode,Flexibo,Whoedited,Dateedited,Timeedited,Editcount
+AF,B17AU,B,17,A,U,2PARU,Secretary - TSC,Secretary,,0,0,0,0,0,0,0,1
+AF,B17AT,B,17,A,T,2AATT,Deputy Commission Secretary,Deputy Com,,0,0,0,0,0,0,0,1
+AF,B17AS,B,17,A,S,2PBSS,Director - Field Services and Discipline,Director -,,0,0,0,0,0,0,0,1
+AF,B17AQ,B,17,A,Q,2AQQQ,Deputy Director - Field Services and Discipline,Deputy Dir,,0,0,0,0,0,0,0,1
+AF,B17AP,B,17,A,P,2AQPP,Assistant Director - Field Services and Discipline,Assistant,,0,0,0,0,0,0,0,1
+AF,B17AN,B,17,A,N,2AQNN,Principal Field Services and Discipline Officer,Principal,,0,0,0,0,0,0,0,1
+AF,B17BS,B,17,B,S,2AASS,Director - Staffing,Director,,0,0,0,0,0,0,0,1
+AF,B17BQ,B,17,B,Q,2PBQQ,Deputy Director - Staffing,Deputy Dir,,0,0,0,0,0,0,0,1
+AF,B17BP,B,17,B,P,2PBPP,Assistant Director - Staffing,Assistant,,0,0,0,0,0,0,0,1
+AF,B17BN,B,17,B,N,2PBMN,Principal Staffing Officer,Principal,,0,0,0,0,0,0,0,1
+AF,B17CS,B,17,C,S,2ARSS,Director - Quality Assurance and Standards,Director-,,0,0,0,0,0,0,0,1
+AF,B17CQ,B,17,C,Q,2ARQQ,Deputy Director - Quality Assurance and Standards,Deputy Dir,,0,0,0,0,0,0,0,1
+AF,B17CP,B,17,C,P,2ARPP,Assistant Director - Quality Assurance and Standards,Assistant,,0,0,0,0,0,0,0,1
+AF,B17CN,B,17,C,N,2ARNN,Principal Quality Assurance and Standards Officer,Principal,,0,0,0,0,0,0,0,1
+AF,B17DR,B,17,D,R,2AARR,Regional Director,Regional D,,0,0,0,0,0,0,0,1
+AF,B17DQ,B,17,D,Q,2AAQQ,County Director,Deputy Sec,,0,0,0,0,0,0,0,1
+AF,B17DP,B,17,D,P,2AAPP,Sub-County Director,Assistant,,0,0,0,0,0,0,0,1
+AF,C01AS,C,1,A,S,3AASS,Director - Administrative Services,Director-A,,0,0,0,0,0,0,0,1
+AF,C01AQ,C,1,A,Q,3AAQQ,Deputy Director - Administration,Deputy Dir,,0,0,0,0,0,0,0,1
+AF,C01AP,C,1,A,P,3AAPP,Assistant Director - Administrative Services,Assistant,,0,0,0,0,0,0,0,1
+AF,C01AN,C,1,A,N,3AANN,Principal Administrative Officer,Principal,,0,0,0,0,0,0,0,1
+AF,C01AL,C,1,A,L,3AALL,Senior Administrative Officer,Senior Adm,,0,0,0,0,0,0,0,1
+AF,C01AK,C,1,A,K,3AAKK,Administrative Officer I,Administra,,0,0,0,0,0,0,0,1
+AF,C01AJ,C,1,A,J,3AAJJ,Administrative Officer II,Administra,,0,0,0,0,0,0,0,1
+AF,C01AH,C,1,A,H,3AAHH,Administrative Officer III,Administra,,0,0,0,0,0,0,0,1
+AF,C03AQ,C,3,A,Q,2AHQQ,Deputy Director - HRD,Deputy Dir,,0,0,0,0,0,0,0,1
+AF,C03AP,C,3,A,P,new,Assistant Director-HRD,new,,0,0,0,0,0,0,0,1
+AF,C03AN,C,3,A,N,2AHNN,Principal HRD Officer,Principal,,0,0,0,0,0,0,0,1
+AF,C03AL,C,3,A,L,new,Senior HRD Officer,new,,0,0,0,0,0,0,0,1
+AF,C03AK,C,3,A,K,new,HRD Officer,new,,0,0,0,0,0,0,0,1
+AF,C04AS,C,4,A,S,2ACSS,Director - HRM&D,Director -,,0,0,0,0,0,0,0,1
+AF,C04AQ,C,4,A,Q,2ACQQ,Deputy Director - HRM,Deputy Dir,,0,0,0,0,0,0,0,1
+AF,C04AP,C,4,A,P,2ACPP,Assistant Director - HRM,Assistant,,0,0,0,0,0,0,0,1
+AF,C04AN,C,4,A,N,2ACNN,Principal - HRM Officer,Principal,,0,0,0,0,0,0,0,1
+AF,C04AL,C,4,A,L,2ACLL,Senior - HRM Officer,Senior Hum,,0,0,0,0,0,0,0,1
+AF,C04AK,C,4,A,K,3ACKK,HRM Officer,Human Reso,,0,0,0,0,0,0,0,1
+AF,C04BK,C,4,B,K,new,Senior HRM Assistant,new,,0,0,0,0,0,0,0,1
+AF,C04BJ,C,4,B,J,new,HRM  Assistant I,new,,0,0,0,0,0,0,0,1
+AF,C04BH,C,4,B,H,3ACHH,HRM  Assistant II,Human Reso,,0,0,0,0,0,0,0,1
+AF,D01AQ,D,1,A,Q,2ABQQ,Deputy Director - Accounts,Deputy Dir,,0,0,0,0,0,0,0,1
+AF,D01AP,D,1,A,P,2ABPP,Assistant Director - Accounts,Assistant,,0,0,0,0,0,0,0,1
+AF,D01AN,D,1,A,N,2ABNN,Principal Accountant,Principal,,0,0,0,0,0,0,0,1
+AF,D01AL,D,1,A,L,2ABLL,Senior Accountant,Senior Acc,,0,0,0,0,0,0,0,1
+AF,D01AK,D,1,A,K,3ABKK,Accountant I,Accountant,,0,0,0,0,0,0,0,1
+AF,D01AJ,D,1,A,J,3ABJJ,Accountant II,Accountant,,0,0,0,0,0,0,0,1
+AF,D02AQ,D,2,A,Q,2AEQQ,Deputy Director - Policy Planning Research and Innovation,Deputy Dir,,0,0,0,0,0,0,0,1
+AF,D02AP,D,2,A,P,2AEPP,Assistant Director - Policy Planning Research and Innovation,Assistant,,0,0,0,0,0,0,0,1
+AF,D02AN,D,2,A,N,2AENN,Principal Policy Planning Research and Innovation Officer,Principal,,0,0,0,0,0,0,0,1
+AF,D02AL,D,2,A,L,2AELL,Senior Policy Planning Research and Innovation Officer,Senior Eco,,0,0,0,0,0,0,0,1
+AF,D02AK,D,2,A,K,new,Policy Planning Research and Innovation Officer,new,,0,0,0,0,0,0,0,1
+AF,D05AS,D,5,A,S,2AJSS,Director - Finance,Director-,,0,0,0,0,0,0,0,1
+AF,D05AQ,D,5,A,Q,2AJQQ,Deputy Director - Finance,Deputy Dir,,0,0,0,0,0,0,0,1
+AF,D05AP,D,5,A,P,2AJPP,Assistant Director - Finance,Assistant,,0,0,0,0,0,0,0,1
+AF,D05AN,D,5,A,N,2AJNN,Principal Finance Officer,Principal,,0,0,0,0,0,0,0,1
+AF,D05AL,D,5,A,L,2AJLL,Senior Finance Officer,Senior Fin,,0,0,0,0,0,0,0,1
+AF,D05AK,D,5,A,K,2AJKK,Finance Officer,Finance Of,,0,0,0,0,0,0,0,1
+AF,D06AQ,D,6,A,Q,2AKQQ,Deputy Director - Supply Chain Management,Deputy Dir,,0,0,0,0,0,0,0,1
+AF,D06AP,D,6,A,P,2AKPP,Assistant Director - Supply Chain Management,Assistant,,0,0,0,0,0,0,0,1
+AF,D06AN,D,6,A,N,2AKNN,Principal Supply Chain Management Officer,Principal,,0,0,0,0,0,0,0,1
+AF,D06AL,D,6,A,L,2AKLL,Senior Supply Chain Management Officer,Senior Sup,,0,0,0,0,0,0,0,1
+AF,D06AK,D,6,A,K,new,Supply Chain Management Officer,new,,0,0,0,0,0,0,0,1
+AF,D06BK,D,6,B,K,3AKKK,Senior Supply Chain Management Assistant,Supply Cha,,0,0,0,0,0,0,0,1
+AF,D06BJ,D,6,B,J,3AKJJ,Supply Chain Management Assistant I,Supply Cha,,0,0,0,0,0,0,0,1
+AF,D06BH,D,6,B,H,3AKHH,Supply Chain Management Assistant II,Supply Cha,,0,0,0,0,0,0,0,1
+AF,D07AS,D,7,A,S,2ADSS,Director - Internal Audit,Director-I,,0,0,0,0,0,0,0,1
+AF,D07AQ,D,7,A,Q,2ADQQ,Deputy Director - Internal Audit,Deputy Dir,,0,0,0,0,0,0,0,1
+AF,D07AP,D,7,A,P,2ADPP,Assistant Director - Internal Audit,Assistant,,0,0,0,0,0,0,0,1
+AF,D07AN,D,7,A,N,2ADNN,Principal Internal Auditor,Principal,,0,0,0,0,0,0,0,1
+AF,D07AL,D,7,A,L,2ADLL,Senior Internal Auditor,Senior Int,,0,0,0,0,0,0,0,1
+AF,D07AK,D,7,A,K,3ADKK,Internal Auditor I,Internal A,,0,0,0,0,0,0,0,1
+AF,D07CQ,D,7,C,Q,new,Deputy Director - Risk Management Officer,new,,0,0,0,0,0,0,0,1
+AF,D07CP,D,7,C,P,new,Assistant Director - Risk Management Officer,new,,0,0,0,0,0,0,0,1
+AF,D07CN,D,7,C,N,new,Principal Risk Management Officer,new,,0,0,0,0,0,0,0,1
+AF,D07CL,D,7,C,L,new,Senior Risk Management Officer,new,,0,0,0,0,0,0,0,1
+AF,D07CK,D,7,C,K,new,Risk Management Officer,new,,0,0,0,0,0,0,0,1
+AF,E01HS,E,1,H,S,new,Director - Legal,new,,0,0,0,0,0,0,0,1
+AF,E01HQ,E,1,H,Q,2AFQQ,Deputy Director - Legal Services,Deputy Dir,,0,0,0,0,0,0,0,1
+AF,E01HP,E,1,H,P,2AFPP,Assistant Director - Legal Services,Assistant,,0,0,0,0,0,0,0,1
+AF,E01HN,E,1,H,N,2AFNN,Principal Legal Officer,Principal,,0,0,0,0,0,0,0,1
+AF,E01HL,E,1,H,L,2AFLL,Senior Legal Officer,Senior Leg,,0,0,0,0,0,0,0,1
+AF,E01HK,E,1,H,K,new,Legal Officer,new,,0,0,0,0,0,0,0,1
+AF,E05BK,E,5,B,K,new,Senior Court Clerk,new,,0,0,0,0,0,0,0,1
+AF,E05BJ,E,5,B,J,new,Court Clerk I,new,,0,0,0,0,0,0,0,1
+AF,E05BH,E,5,B,H,new,Court Clerk II,new,,0,0,0,0,0,0,0,1
+AF,F10CL,F,10,C,L,F10AL,Senior Nursing Officer,Senior Nur,,0,0,0,0,0,0,0,1
+AF,J01AQ,J,1,A,Q,new,Deputy Director - Facility Management,new,,0,0,0,0,0,0,0,1
+AF,J01AP,J,1,A,P,new,Assistant Director - Facility Management,new,,0,0,0,0,0,0,0,1
+AF,J01AN,J,1,A,N,new,Principal Facility Management Officer,new,,0,0,0,0,0,0,0,1
+AF,K09BL,K,9,B,L,new,Senior Foreman,new,,0,0,0,0,0,0,0,1
+AF,K09BK,K,9,B,K,new,Foreman,new,,0,0,0,0,0,0,0,1
+AF,M05AN,M,5,A,N,new,Principal Librarian,new,,0,0,0,0,0,0,0,1
+AF,M05AL,M,5,A,L,new,Senior Librarian,new,,0,0,0,0,0,0,0,1
+AF,M05AK,M,5,A,K,new,Librarian,new,,0,0,0,0,0,0,0,1
+AF,M06AQ,M,6,A,Q,2ANQQ,Deputy Director - Corporate Communication,Deputy Dir,,0,0,0,0,0,0,0,1
+AF,M06AP,M,6,A,P,2ANPP,Assistant Director - Corporate Communication Officer,Assistant,,0,0,0,0,0,0,0,1
+AF,M06AN,M,6,A,N,2ANNN,Principal Corporate Communication Officer,Principal,,0,0,0,0,0,0,0,1
+AF,M06AL,M,6,A,L,2ANLL,Senior Corporate Communication Officer,Senior Cor,,0,0,0,0,0,0,0,1
+AF,M06AK,M,6,A,K,new,Corporate Communication Officer,new,,0,0,0,0,0,0,0,1
+AF,M07AQ,M,7,A,Q,2AMQQ,Deputy Director - Records Management,Deputy Dir,,0,0,0,0,0,0,0,1
+AF,M07AP,M,7,A,P,new,Assistant Director - Records Management,New,,0,0,0,0,0,0,0,1
+AF,M07AN,M,7,A,N,2AMNN,Principal Records Management Officer,Principal,,0,0,0,0,0,0,0,1
+AF,M07AL,M,7,A,L,2AMLL,Senior Records Management Officer,Senior Rec,,0,0,0,0,0,0,0,1
+AF,M07AK,M,7,A,K,2AMKK,Records Management Officer I,Records Ma,,0,0,0,0,0,0,0,1
+AF,M07AJ,M,7,A,J,2AMJJ,Records Management Officer II,Records Ma,,0,0,0,0,0,0,0,1
+AF,M07BK,M,7,B,K,new,Senior Records Management Assistant I,new,,0,0,0,0,0,0,0,1
+AF,M07BJ,M,7,B,J,new,Records Management Assistant I,new,,0,0,0,0,0,0,0,1
+AF,M07BH,M,7,B,H,new,Records Management Assistant II,new,,0,0,0,0,0,0,0,1
+AF,M09BK,M,9,B,K,new,Senior Customer Care Officer,new,,0,0,0,0,0,0,0,1
+AF,M09BJ,M,9,B,J,new,Assistant Customer Care Officer I,new,,0,0,0,0,0,0,0,1
+AF,M09BH,M,9,B,H,new,Assistant Customer Care Officer II,new,,0,0,0,0,0,0,0,1
+AF,M09CJ,M,9,C,J,3GAJJ,Senior Customer Care Assistant,Telephone,,0,0,0,0,0,0,0,1
+AF,M09CH,M,9,C,H,3GAHH,Customer Care Assistant II,Telephone,,0,0,0,0,0,0,0,1
+AF,M09CG,M,9,C,G,4GAGG,Customer Care Assistant I,Senior Tel,,0,0,0,0,0,0,0,1
+AF,M11AS,M,11,A,S,2AVSS,Director - ICT,Director-,,0,0,0,0,0,0,0,1
+AF,M11AQ,M,11,A,Q,2AVQQ,Deputy Director - ICT,Deputy Dir,,0,0,0,0,0,0,0,1
+AF,M11AP,M,11,A,P,2AVPP,Assistant Director - ICT,Assistant,,0,0,0,0,0,0,0,1
+AF,M11AN,M,11,A,N,2AVNN,Principal ICT Officer,Principal,,0,0,0,0,0,0,0,1
+AF,M11AL,M,11,A,L,2AVLL,Senior ICT Officer,Senior ICT,,0,0,0,0,0,0,0,1
+AF,M11AK,M,11,A,K,new,ICT Officer,new,,0,0,0,0,0,0,0,1
+AF,M11BK,M,11,B,K,3AVKK,Senior Assistant ICT Officer,ICT Office,,0,0,0,0,0,0,0,1
+AF,M11BJ,M,11,B,J,3AVJJ,Assistant ICT Officer I,ICT Office,,0,0,0,0,0,0,0,1
+AF,M11BH,M,11,B,H,3AVHH,Assistant ICT Officer II,ICT Office,,0,0,0,0,0,0,0,1
+AF,O10AQ,O,10,A,Q,new,Deputy Director - Security services,new,,0,0,0,0,0,0,0,1
+AF,O10AP,O,10,A,P,new,Assistant Director - Security Services.,new,,0,0,0,0,0,0,0,1
+AF,O10AN,O,10,A,N,new,Principal Security Officer,new,,0,0,0,0,0,0,0,1
+AF,O10AL,O,10,A,L,new,Senior Security Officer,new,,0,0,0,0,0,0,0,1
+AF,O10AK,O,10,A,K,new,Security Officer I,new,,0,0,0,0,0,0,0,1
+AF,O10AJ,O,10,A,J,3ASJJ,Security Officer II,Security O,,0,0,0,0,0,0,0,1
+AF,O10AH,O,10,A,H,3ASHH,Security Officer III,Assistant,,0,0,0,0,0,0,0,1
+AF,O10BG,O,10,B,G,3ASGG,Senior Security Warden,Senior Sec,,0,0,0,0,0,0,0,1
+AF,O10BF,O,10,B,F,4ASFF,Security Warden I,Security W,,0,0,0,0,0,0,0,1
+AF,O10BE,O,10,B,E,4ASEE,Security Warden II,Security W,,0,0,0,0,0,0,0,1
+AF,O10BD,O,10,B,D,4ASDD,Security Warden III,Security W,,0,0,0,0,0,0,0,1
+AF,P02AQ,P,2,A,Q,new,Deputy Director - Psychological Counsellor,new,,0,0,0,0,0,0,0,1
+AF,P02AP,P,2,A,P,new,Assistant Director - Psychological Counsellor,new,,0,0,0,0,0,0,0,1
+AF,P02AN,P,2,A,N,new,Principal Psychological Counsellor,new,,0,0,0,0,0,0,0,1
+AF,P02AL,P,2,A,L,new,Senior Psychological Counseling Officer,new,,0,0,0,0,0,0,0,1
+AF,P02AK,P,2,A,K,new,Psychological Counseling Officer I,new,,0,0,0,0,0,0,0,1
+AF,P02AJ,P,2,A,J,new,Psychological Counseling Officer II,new,,0,0,0,0,0,0,0,1
+AF,T02AN,T,2,A,N,2AGNN,Principal Assistant Office Administrator,Executive,,0,0,0,0,0,0,0,1
+AF,T02AL,T,2,A,L,2AGLL,Senior Assistant Office Administrator,Personal S,,0,0,0,0,0,0,0,1
+AF,T02AK,T,2,A,K,7AGKK,Assistant Office Administrator,Personal S,,0,0,0,0,0,0,0,1
+AF,T02AJ,T,2,A,J,7AGJJ,Assistant Office Administrator II,Shorthand,,0,0,0,0,0,0,0,1
+AF,T02AH,T,2,A,H,7AGHH,Assistant Office Administrator III,Shorthand,,0,0,0,0,0,0,0,1
+AF,T02BP,T,2,B,P,new,Assistant Director - Office Administrator Service,new,,0,0,0,0,0,0,0,1
+AF,T02BN,T,2,B,N,new,Principal Office Administrator,new,,0,0,0,0,0,0,0,1
+AF,T02BL,T,2,B,L,new,Senior Office Administrator,new,,0,0,0,0,0,0,0,1
+AF,T02BK,T,2,B,K,new,Office Administrator I,new,,0,0,0,0,0,0,0,1
+AF,T02BJ,T,2,B,J,new,Office Administrator II,new,,0,0,0,0,0,0,0,1
+AF,T02CJ,T,2,C,J,3AGJJ,Office Administrative Assistant I,Senior Cop,,0,0,0,0,0,0,0,1
+AF,T02CH,T,2,C,H,3AGHH,Office Administrative Assistant II,Copy Typis,,0,0,0,0,0,0,0,1
+AF,T02CG,T,2,C,G,3AGGG,Office Administrative Assistant III,Copy Typis,,0,0,0,0,0,0,0,1
+AF,T03DJ,T,3,D,J,3AAGJ,Senior Clerical Officer,Senior Cle,,0,0,0,0,0,0,0,1
+AF,T03DH,T,3,D,H,4AAGH,Clerical Officer I,Clerical O,,0,0,0,0,0,0,0,1
+AF,T03DG,T,3,D,G,3AAGG,Clerical Officer II,Clerical O,,0,0,0,0,0,0,0,1
+AF,T03DF,T,3,D,F,4AAFF,Clerical Officer III,Clerical O,,0,0,0,0,0,0,0,1
+AF,T04BH,T,4,B,H,4SSDH,Senior Support Supervisor,Senior Sup,,0,0,0,0,0,0,0,1
+AF,T04BG,T,4,B,G,4SSDG,Senior Support Staff,Senior Sup,,0,0,0,0,0,0,0,1
+AF,T04BF,T,4,B,F,4SSDF,Support Staff I,Support St,,0,0,0,0,0,0,0,1
+AF,T04BE,T,4,B,E,4SSDE,Support Staff II,Support St,,0,0,0,0,0,0,0,1
+AF,T04BD,T,4,B,D,4SSDD,Support Staff III,Support St,,0,0,0,0,0,0,0,1
+AF,U01AK,U,1,A,K,new,Principal Driver,new,,0,0,0,0,0,0,0,1
+AF,U01AJ,U,1,A,J,3GJJJ,Chief Driver,Senior Dri,,0,0,0,0,0,0,0,1
+AF,U01AH,U,1,A,H,3GJHH,Senior Driver,Senior Dri,,0,0,0,0,0,0,0,1
+AF,U01AG,U,1,A,G,3GJGG,Driver I,Driver[1],,0,0,0,0,0,0,0,1
+AF,U01AF,U,1,A,F,4GJFF,Driver II,Driver[2],,0,0,0,0,0,0,0,1
+AF,U01AE,U,1,A,E,4GJEE,Driver III,Driver[3],,0,0,0,0,0,0,0,1
+AF,U03CJ,U,3,C,J,new,Charge Hand,new,,0,0,0,0,0,0,0,1
+AF,U03CH,U,3,C,H,new,Senior Artisan,new,,0,0,0,0,0,0,0,1
+AF,U03CG,U,3,C,G,new,Artisan I,new,,0,0,0,0,0,0,0,1
+AF,U03CF,U,3,C,F,new,Artisan II,new,,0,0,0,0,0,0,0,1
+AF,U03CE,U,3,C,E,new,Artisan III,new,,0,0,0,0,0,0,0,1
+AF,3AVXJ,X,0,X,J,3AVXJ,TSC - Intern (Secretariat),Intern Sec,,0,0,0,0,0,0,0,1
+AF,3AKJJ,X,0,X,J,3AKJJ,<Obsolete> Supply Chain Management Officer II,Supply Cha,,0,0,0,0,0,0,0,1
+AF,3ACJJ,X,0,X,J,3ACJJ,<Obsolete> Human Resource Officer[2],Human Reso,,0,0,0,0,0,0,0,1
+AF,3ABHH,X,0,X,H,3ABHH,<Obsolete> Accounts Assistant,Accounts A,,0,0,0,0,0,0,0,1
+AF,4AAEE,X,0,X,E,4AAEE,<Obsolete> Clerical [4],Clerical O,,0,0,0,0,0,0,0,1
+AF,4GJDD,X,0,X,D,4GJDD,<Obsolete> Driver[4],Driver[4],,0,0,0,0,0,0,0,1
+AB,G99AQ,G,99,A,Q,D5,Chief Principal,R&Q,,0,0,0,0,0,0,0,1
+AB,G99AP,G,99,A,P,D4,Senior Principal,P,,0,0,0,0,0,0,0,1
+AB,G99AN,G,99,A,N,D3,Principal,N&M,,0,0,0,0,0,0,0,1
+AB,G99BK,G,99,B,K,C5,Deputy Principal IV,,,0,0,0,0,0,0,0,1
+AB,G99BN,G,99,B,N,D3,Deputy Principal I,N&M,,0,0,0,0,0,0,0,1
+AB,G99BM,G,99,B,M,D2,Deputy Principal II,N,,0,0,0,0,0,0,0,1
+AB,G99BL,G,99,B,L,D1,Deputy Principal III,M,,0,0,0,0,0,0,0,1
+AB,G99CM,G,99,C,M,D2,Senior Master I,N,,0,0,0,0,0,0,0,1
+AB,G99CL,G,99,C,L,D1,Senior Master II,N,,0,0,0,0,0,0,0,1
+AB,G99CK,G,99,C,K,C5,Senior Master III,M,,0,0,0,0,0,0,0,1
+AB,G99CJ,G,99,C,J,C4,Senior Master IV,NewM,,0,0,0,0,0,0,0,1
+AB,G99DL,G,99,D,L,D1,Senior Headteacher,N&M,,0,0,0,0,0,0,0,1
+AB,G99DK,G,99,D,K,C5,Headteacher,"L,K,J,H&G",,0,0,0,0,0,0,0,1
+AB,G99EK,G,99,E,K,C5,Deputy Headteacher I,M,,0,0,0,0,0,0,0,1
+AB,G99EJ,G,99,E,J,C4,Deputy Headteacher II,"L,K,J,H&G",,0,0,0,0,0,0,0,1
+AB,G99FH,G,99,F,H,C3,Senior Teacher I,L,,0,0,0,0,0,0,0,1
+AB,G99FG,G,99,F,G,C2,Senior Teacher IIa,K,,0,0,0,0,0,0,0,1
+AB,G99XG,G,99,X,G,C2,Senior Teacher IIb,K,,0,0,0,0,0,0,0,1
+AB,G99GM,G,99,G,M,D2,Senior Lecturer I,N,,0,0,0,0,0,0,0,1
+AB,G99GL,G,99,G,L,D1,Senior Lecturer II,N,,0,0,0,0,0,0,0,1
+AB,G99GK,G,99,G,K,C5,Senior Lecturer III,M,,0,0,0,0,0,0,0,1
+AB,G99GJ,G,99,G,J,C4,Senior Lecturer IV,M,,0,0,0,0,0,0,0,1
+AB,G99GH,G,99,G,H,C3,Lecturer I,L,,0,0,0,0,0,0,0,1
+AB,G99GG,G,99,G,G,C2,Lecturer II,K,,0,0,0,0,0,0,0,1
+AB,G99GF,G,99,G,F,C1,Lecturer III,J,,0,0,0,0,0,0,0,1
+AB,G99HH,G,99,H,H,C3,Secondary Teacher I,L,,0,0,0,0,0,0,0,1
+AB,G99HG,G,99,H,G,C2,Secondary Teacher II,K,,0,0,0,0,0,0,0,1
+AB,G99HF,G,99,H,F,C1,Secondary Teacher III,J,,0,0,0,0,0,0,0,1
+AB,G99JF,G,99,J,F,C1,Primary Teacher I,H,,0,0,0,0,0,0,0,1
+AB,G99JE,G,99,J,E,B5,Primary Teacher II,G,,0,0,0,0,0,0,0,1
+AB,6PCXF,,,,F,,Relief Primary Teacher,,,0,0,0,0,0,0,0,0
+AB,6PBXH,,,,G,,Relief Secondary Teacher,,,0,0,0,0,0,0,0,0
+AB,G99PK,G,99,P,K,C5,Curriculum Support Officer II,,,0,0,0,0,0,0,0,0
+AB,G99PL,G,99,P,L,D1,Curriculum Support Officer I,,,0,0,0,0,0,0,0,0
+AB,G99XE,G,99,X,E,,Intern Teacher Primary,,,0,0,0,0,0,0,0,0
+AB,G99XF,G,99,X,F,,Intern Teacher Secondary,,,0,0,0,0,0,0,0,0

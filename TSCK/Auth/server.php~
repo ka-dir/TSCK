@@ -1,0 +1,173 @@
+<?php
+
+include('../includes/dbConfig.php');
+session_start();
+
+
+// variable declaration
+$idnumber = "";
+$phonenumber = "";
+$email = "";
+$errors = array();
+$_SESSION['success'] = "";
+
+// connect to database
+//$db = mysqli_connect('localhost', 'root', '', 'budgetsystem');
+// REGISTER USER
+if (isset($_POST['reg_user'])) {
+    // receive all input values from the form
+    $idnumber = mysqli_real_escape_string($conn, $_POST['idnumber']);
+    $phonenumber = mysqli_real_escape_string($conn, $_POST['phonenumber']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+
+
+    // form validation: ensure that the form is correctly filled
+    if (empty($idnumber)) {
+        array_push($errors, "ID Number is required");
+    }
+    if (empty($phonenumber)) {
+        array_push($errors, "Phone Number is required");
+    }
+    if (empty($email)) {
+        array_push($errors, "Email is required");
+    }
+
+    //Checks if id Numer and Phone Number exists in database
+    $userquery = "SELECT * FROM users";
+    $resultuser = mysqli_query($conn, $userquery);
+    while ($row = mysqli_fetch_array($resultuser)) {
+        $id_number = $row['id_number'];
+        $phone_number = $row['phone_number'];
+        if ($idnumber == $id_number) {
+            # code...
+            array_push($errors, "ID NumberAlready in Use. Please use Different Credentials!");
+        } elseif ($phonenumber == $phone_number) {
+            # code...
+            array_push($errors, "Phone Number Already in User. Please Try Again!");
+        }
+    }
+
+    function sendTPayOTP($MSISDNTo, $Message) {
+        $Password = "dd2a2868f69dd54721922ae49acf57a7";
+        $Host = "http://197.248.226.42:8080/sms/?";
+
+        $Results = file($Host . "&api_key=" . urlencode($Password) . "&phone=" . urlencode($MSISDNTo) . "&message=" . urlencode($Message));
+        print_r($Results);
+    }
+
+//echo('Init SMS...<br>');
+    // register user if there are no errors in the form
+    // function to generate random
+function generatePIN($digits = 4){
+    $i = 0; //counter
+    $OTP = ""; //our default pin is blank.
+    while($i < $digits){
+        //generate a random number between 0 and 9.
+        $OTP .= mt_rand(0, 9);
+        $i++;
+    }
+    return $OTP;
+}
+    if (count($errors) == 0) {
+        //$password = md5($password_1);//encrypt the password before saving in the database
+       // $OTP = 123456;
+        	$OTP=generatePIN(4);
+
+        $query = "INSERT INTO `users` (`id_number`,`phone_number`, `email`, `OTP`) 
+					  VALUES('$idnumber','$phonenumber', '$email', '$OTP')";
+					  $resultreg=$conn->query($query) or die( mysqli_error($conn));
+					  
+        sendTPayOTP($phonenumber, 'Your OTP is ' . $OTP . ' expires at 2018-10-16 14:30:00');
+
+        $_SESSION['id_number'] = $idnumber;
+        $_SESSION['phone_number'] = $phonenumber;
+
+        $_SESSION['success'] = "You are now logged in";
+        header('location: verifyaccount.php');
+        //echo $_SESSION['id_number'];
+        $otpquery = "SELECT * FROM users WHERE id_number='" . $_SESSION['id_number'] . "'";
+        $resultotp1 = mysqli_query($conn, $otpquery);
+        while ($rowotp = mysqli_fetch_array($resultotp1)) {
+            # code...
+            $_SESSION['OTP'] = $rowotp['OTP'];
+            $_SESSION['email'] = $rowotp['email'];
+        }
+    }
+    
+   
+    
+}
+
+
+//Verify User through OTP
+//User Creates password
+if (isset($_POST['otpverify'])) {
+    # code...
+    //Receive input from the form
+    $otp = mysqli_real_escape_string($conn, $_POST['otp_code']);
+    $password_1 = mysqli_real_escape_string($conn, $_POST['password_1']);
+    $password_2 = mysqli_real_escape_string($conn, $_POST['password_2']);
+
+    //validates form
+    if (empty($password_1)) {
+        array_push($errors, "Password is required");
+    }
+
+    //Confirms Password
+    if ($password_1 != $password_2) {
+        array_push($errors, "The two passwords do not match");
+    }
+
+    //Verifies if OTP code is already in use
+    if ($otp != $_SESSION['OTP']) {
+        # code...
+        array_push($errors, "Please Enter Valid Code");
+    }
+
+
+    // updates user password after verifying OTP
+    if (count($errors) == 0) {
+        $password = md5($password_1); //encrypt the password before saving in the database
+        $passwordquery = "UPDATE users SET password='$password' WHERE id_number='" . $_SESSION['id_number'] . "'";
+        $resultpassword = mysqli_query($conn, $passwordquery);
+        if ($resultpassword) {
+            $_SESSION['success'] = "You are now logged in";
+            header('location:../secA.php');
+        } else {
+
+            array_push($errors, "Please you havent created your password,Thank you");
+        }
+    }
+}
+
+
+
+// ... 
+// LOGIN USER
+if (isset($_POST['login_user'])) {
+    $username = mysqli_real_escape_string($conn, $_POST['idnumber']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+
+    if (empty($username)) {
+        array_push($errors, "Username is required");
+    }
+    if (empty($password)) {
+        array_push($errors, "Password is required");
+    }
+
+    if (count($errors) == 0) {
+        $password = md5($password);
+        $query = "SELECT * FROM users WHERE id_number='$username' AND password='$password'";
+        $results = mysqli_query($conn, $query);
+
+        if (mysqli_num_rows($results) == 1) {
+            $_SESSION['id_number'] = $username;
+            $_SESSION['phone_number'] = $phonenumber;
+            $_SESSION['success'] = "You are now logged in";
+            header('location: ../secA.php');
+        } else {
+            array_push($errors, "Wrong username/password combination");
+        }
+    }
+}
+?>
